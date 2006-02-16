@@ -7,6 +7,7 @@ Group:		Applications/Multimedia
 Source0:	http://k9copy.free.fr/file.php?file=%{name}-%{version}.tar.gz
 # Source0-md5:	1eef6d87ff3cf91594c1a32615356cd0
 URL:		http://k9copy.free.fr/
+Patch0:		%{name}-desktop.patch
 BuildRequires:	dvdauthor
 BuildRequires:	kdelibs-devel
 BuildRequires:	libdvdcss
@@ -38,6 +39,7 @@ Header files for libk3bcore library.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
@@ -49,14 +51,16 @@ Header files for libk3bcore library.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir},%{_desktopdir}/kde}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	prefix=%{_prefix} \
 	manprefix=%{_mandir}
+mv $RPM_BUILD_ROOT%{_datadir}/applnk/Multimedia/k9copy.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde
 
 %find_lang %{name} --all-name --with-kde
+echo '%lang(en) /usr/share/locale/en_GB/LC_MESSAGES/k9copy.mo' >> %{name}.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,8 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/libk9copy.so.0.0.0
-#%{_desktopdir}/k9copy.desktop
-%{_iconsdir}/hicolor/48x48/apps/k9copy.png
+%{_desktopdir}/kde/k9copy.desktop
+%{_iconsdir}/*/*x*/*/k9copy.png
 %{_datadir}/apps/k9copy/k9copyui.rc
 
 %files devel
