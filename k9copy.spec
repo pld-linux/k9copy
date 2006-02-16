@@ -18,7 +18,7 @@ BuildRequires:	vamps
 Requires:	dvd+rw-tools
 Requires:	dvdauthor
 Requires:	libdvdcss
-Requires:	ibdvdnav
+Requires:	libdvdnav
 Requires:	libdvdread
 Requires:	vamps
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
