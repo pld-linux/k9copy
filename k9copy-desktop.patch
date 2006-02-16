@@ -1,0 +1,15 @@
+--- k9copy-1.0.3b/src/k9copy.desktop	2006-01-23 21:16:17.000000000 +0100
++++ k9copy-1.0.3b/src/k9copy.desktop	2006-02-16 13:33:06.000000000 +0100
+@@ -3,6 +3,10 @@
+ Name=k9copy
+ Exec=k9copy -caption "%c" %i %m %u
+ Comment=DVD9 to DVD5 backup tool
++Comment[pl]=Kopiowanie DVD9 do DVD5
+ MimeTypes=
+ Terminal=false
+-Icon=k9copy.png
+\ Brak znaku nowej linii na koñcu pliku
++Icon=k9copy.png
++Categories=Qt;KDE;AudioVideo;DiscBurning;
++Encoding=UTF-8
++# vi: encoding=utf-8
