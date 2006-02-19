@@ -9,19 +9,10 @@ Source0:	http://k9copy.free.fr/file.php?file=%{name}-%{version}.tar.gz
 # Source0-md5:	1eef6d87ff3cf91594c1a32615356cd0
 URL:		http://k9copy.free.fr/
 Patch0:		%{name}-desktop.patch
-BuildRequires:	dvdauthor
-BuildRequires:	kdelibs-devel
-BuildRequires:	libdvdcss
-BuildRequires:	libdvdnav-devel
-BuildRequires:	libdvdread
-BuildRequires:	libstdc++-devel
-BuildRequires:	m4
-BuildRequires:	vamps
+BuildRequires:	kdelibs-devel >= 9:3.0
+BuildRequires:	libdvdread-devel
 Requires:	dvd+rw-tools
 Requires:	dvdauthor
-Requires:	libdvdcss
-Requires:	libdvdnav
-Requires:	libdvdread
 Requires:	vamps
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,7 +30,7 @@ Summary:	Header files for k9copy library
 Summary(pl):	Pliki nag³ówkowe biblioteki k9copy
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	kdelibs-devel
+Requires:	kdelibs-devel >= 9:3.0
 
 %description devel
 Header files for libk3bcore library.
