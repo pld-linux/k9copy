@@ -74,14 +74,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/libk9copy.so.*.*.*
+%{_datadir}/apps/k9copy
+%{_datadir}/apps/konqueror/servicemenus/k9copy_open.desktop
 %{_desktopdir}/kde/k9copy.desktop
 %{_iconsdir}/*/*x*/*/k9copy.png
-%{_datadir}/apps/k9copy/icons/hicolor/16x16/actions/*.png
-%{_datadir}/apps/k9copy/icons/hicolor/22x22/actions/*.png
-%{_datadir}/apps/k9copy/icons/hicolor/32x32/actions/*.png
-%{_datadir}/apps/k9copy/icons/hicolor/48x48/actions/*.png
-%{_datadir}/apps/konqueror/servicemenus/k9copy_open.desktop
-%{_datadir}/apps/k9copy/k9copyui.rc
 
 %files devel
 %defattr(644,root,root,755)
