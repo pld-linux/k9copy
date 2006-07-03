@@ -1,10 +1,11 @@
---- k9copy-1.0.3b/src/k9copy.desktop	2006-01-23 21:16:17.000000000 +0100
-+++ k9copy-1.0.3b/src/k9copy.desktop	2006-02-16 13:33:06.000000000 +0100
-@@ -3,6 +3,10 @@
- Name=k9copy
- Exec=k9copy -caption "%c" %i %m %u
- Comment=DVD9 to DVD5 backup tool
+--- src/k9copy.desktop.orig	2006-06-22 22:43:34.000000000 +0200
++++ src/k9copy.desktop	2006-07-04 00:00:08.185652088 +0200
+@@ -6,6 +6,10 @@
+ GenericName=Video DVD Backup
+ Comment[fr]=Backup de DVD9 en DVD5
+ GenericName[fr]=Backup de DVD Video
 +Comment[pl]=Kopiowanie DVD9 do DVD5
++GenericName[pl]=Kopiowanie DVD9 do DVD5
  MimeTypes=
  Terminal=false
 -Icon=k9copy.png
@@ -12,4 +13,3 @@
 +Icon=k9copy.png
 +Categories=Qt;KDE;AudioVideo;DiscBurning;
 +Encoding=UTF-8
-+# vi: encoding=utf-8
