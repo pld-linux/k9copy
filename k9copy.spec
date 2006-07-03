@@ -1,13 +1,13 @@
-%define _rc     2
+%define _rc     beta1
 Summary:	A vamps frontend
 Summary(pl):	Frontend do programu vamps
 Name:		k9copy
-Version:	1.0.4
-Release:	%{_rc}.1
+Version:	1.1.0
+Release:	0.%{_rc}.1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}-%{_rc}.tar.gz
-# Source0-md5:	5b53658a12192c7832059b56daf23385
+# Source0-md5:	d9918b924ba4e42fdfbfa139ff899198
 URL:		http://k9copy.free.fr/
 Patch0:		%{name}-desktop.patch
 BuildRequires:	kdelibs-devel >= 9:3.0
@@ -41,7 +41,7 @@ Pliki nag³ówkowe biblioteki k9copy.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_rc}
-%patch0 -p1
+%patch0 -p0
 
 %build
 %configure
@@ -58,6 +58,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir},%{_desktopdir}/kde}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	prefix=%{_prefix} \
+	kde_htmldir=%{_kdedocdir} \
 	manprefix=%{_mandir}
 mv $RPM_BUILD_ROOT%{_datadir}/applnk/Multimedia/k9copy.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde
 
@@ -75,6 +76,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libk9copy.so.*.*.*
 %{_desktopdir}/kde/k9copy.desktop
 %{_iconsdir}/*/*x*/*/k9copy.png
+%{_datadir}/apps/k9copy/icons/hicolor/16x16/actions/*.png
+%{_datadir}/apps/k9copy/icons/hicolor/22x22/actions/*.png
+%{_datadir}/apps/k9copy/icons/hicolor/32x32/actions/*.png
+%{_datadir}/apps/k9copy/icons/hicolor/48x48/actions/*.png
+%{_datadir}/apps/konqueror/servicemenus/k9copy_open.desktop
 %{_datadir}/apps/k9copy/k9copyui.rc
 
 %files devel
