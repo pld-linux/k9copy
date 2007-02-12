@@ -1,6 +1,6 @@
 %define _rc     beta1
 Summary:	A vamps frontend
-Summary(pl):	Frontend do programu vamps
+Summary(pl.UTF-8):   Frontend do programu vamps
 Name:		k9copy
 Version:	1.1.0
 Release:	0.%{_rc}.1
@@ -21,14 +21,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 k9copy is a very easy-to-use GUI for vamps that allows the shrinking
 of DVDs from DVD 9 to DVD 5 under KDE in Linux.
 
-%description -l pl
-k9copy to bardzo ≥atwy w uøyciu graficzny interfejs do programu vamps,
-umoøliwiaj±cy zmniejszanie obrazÛw p≥yt DVD z DVD 9 do DVD 5 w
-∂rodowisku KDE pod Linuksem.
+%description -l pl.UTF-8
+k9copy to bardzo ≈Çatwy w u≈ºyciu graficzny interfejs do programu vamps,
+umo≈ºliwiajƒÖcy zmniejszanie obraz√≥w p≈Çyt DVD z DVD 9 do DVD 5 w
+≈õrodowisku KDE pod Linuksem.
 
 %package devel
 Summary:	Header files for k9copy library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki k9copy
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki k9copy
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	kdelibs-devel >= 9:3.0
@@ -36,8 +36,8 @@ Requires:	kdelibs-devel >= 9:3.0
 %description devel
 Header files for libk3bcore library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki k9copy.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki k9copy.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_rc}
