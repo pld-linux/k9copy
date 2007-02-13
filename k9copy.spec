@@ -1,6 +1,6 @@
 %define _rc     beta1
 Summary:	A vamps frontend
-Summary(pl.UTF-8):   Frontend do programu vamps
+Summary(pl.UTF-8):	Frontend do programu vamps
 Name:		k9copy
 Version:	1.1.0
 Release:	0.%{_rc}.1
@@ -28,7 +28,7 @@ umożliwiający zmniejszanie obrazów płyt DVD z DVD 9 do DVD 5 w
 
 %package devel
 Summary:	Header files for k9copy library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki k9copy
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki k9copy
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	kdelibs-devel >= 9:3.0
