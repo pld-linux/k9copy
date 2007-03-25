@@ -1,6 +1,12 @@
---- src/k9copy.desktop.orig	2006-06-22 22:43:34.000000000 +0200
-+++ src/k9copy.desktop	2006-07-04 00:00:08.185652088 +0200
-@@ -6,6 +6,10 @@
+--- src/k9copy.desktop.orig	2007-02-18 10:58:59.000000000 +0100
++++ src/k9copy.desktop	2007-03-25 22:45:32.291131927 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-U
+ Type=Application
+ Name=k9copy
+ Exec=k9copy -caption "%c" %i %m  %u
+@@ -7,9 +6,12 @@
  GenericName=Video DVD Backup
  Comment[fr]=Backup de DVD9 en DVD5
  GenericName[fr]=Backup de DVD Video
@@ -8,8 +14,11 @@
 +GenericName[pl]=Kopiowanie DVD9 do DVD5
  MimeTypes=
  Terminal=false
--Icon=k9copy.png
-\ Brak znaku nowej linii na koñcu pliku
-+Icon=k9copy.png
+ Icon=k9copy.png
+ DocPath=k9copy/index.html
+-Categories=KDE;Application;AudioVideo;DiscBurning;
+-X-KDE-StartupNotify=true
+\ Brak znaku nowej linii na koÅ„cu pliku
 +Categories=Qt;KDE;AudioVideo;DiscBurning;
 +Encoding=UTF-8
++X-KDE-StartupNotify=true
