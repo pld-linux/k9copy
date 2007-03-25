@@ -1,13 +1,12 @@
-%define _rc     beta1
 Summary:	A vamps frontend
 Summary(pl.UTF-8):	Frontend do programu vamps
 Name:		k9copy
-Version:	1.1.0
-Release:	0.%{_rc}.1
+Version:	1.1.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}-%{_rc}.tar.gz
-# Source0-md5:	d9918b924ba4e42fdfbfa139ff899198
+Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}.tar.gz
+# Source0-md5:	805042ad7ab9c1be234c3cac4c38a288
 URL:		http://k9copy.free.fr/
 Patch0:		%{name}-desktop.patch
 BuildRequires:	kdelibs-devel >= 9:3.0
@@ -40,7 +39,7 @@ Header files for libk3bcore library.
 Pliki nagłówkowe biblioteki k9copy.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_rc}
+%setup -q
 %patch0 -p0
 
 %build
