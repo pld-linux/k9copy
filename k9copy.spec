@@ -25,30 +25,18 @@ k9copy to bardzo łatwy w użyciu graficzny interfejs do programu vamps,
 umożliwiający zmniejszanie obrazów płyt DVD z DVD 9 do DVD 5 w
 środowisku KDE pod Linuksem.
 
-%package devel
-Summary:	Header files for k9copy library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki k9copy
-Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Requires:	kdelibs-devel >= 9:3.0
-
-%description devel
-Header files for libk3bcore library.
-
-%description devel -l pl.UTF-8
-Pliki nagłówkowe biblioteki k9copy.
-
 %prep
 %setup -q
 %patch0 -p0
 
 %build
-%configure
-%{__make} \
-	CC="%{__cc}" \
-	CXX="%{__cxx}" \
-	CFLAGS="%{rpmcflags}" \
-	CXXFLAGS="%{rpmcflags} -fno-exceptions"
+%configure \
+%if "%{_lib}" == "lib64"
+	--enable-libsuffix=64 \
+%endif
+	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
+	--with-qt-libraries=%{_libdir}
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -72,14 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/libk9copy.so.*.*.*
 %{_datadir}/apps/k9copy
 %{_datadir}/apps/konqueror/servicemenus/k9copy_open.desktop
 %{_desktopdir}/kde/k9copy.desktop
 %{_iconsdir}/*/*x*/*/k9copy.png
-
-%files devel
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libk9copy.so
-%{_libdir}/libk9copy.la
-%{_includedir}/*.h
