@@ -11,13 +11,14 @@ License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{_ver}.tar.gz
 # Source0-md5:	2df2c52d0c861a589a5794d4f29531f8
-URL:		http://k9copy.free.fr/
 Patch0:		%{name}-desktop.patch
+URL:		http://k9copy.free.fr/
 BuildRequires:	kdelibs-devel >= 9:3.0
 BuildRequires:	libdvdread-devel
 Requires:	dvd+rw-tools
 Requires:	dvdauthor
 Requires:	vamps
+Obsoletes:	k9copy-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
