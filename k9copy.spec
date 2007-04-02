@@ -1,5 +1,5 @@
 
-%define		_ver		1.1.1-2
+%define		_ver		1.1.1-3
 %define		_real_ver	%(echo %{_ver} |tr - .)
 
 Summary:	A vamps frontend
@@ -10,7 +10,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{_ver}.tar.gz
-# Source0-md5:	2df2c52d0c861a589a5794d4f29531f8
+# Source0-md5:	5b868bf5e0509ecc399c7b18cb2d7a6d
 Patch0:		%{name}-desktop.patch
 URL:		http://k9copy.free.fr/
 BuildRequires:	kdelibs-devel >= 9:3.0
