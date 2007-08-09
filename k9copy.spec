@@ -1,18 +1,15 @@
 
-%define		_ver		1.1.1-3
-%define		_real_ver	%(echo %{_ver} |tr - .)
-
 Summary:	A vamps frontend
 Summary(pl.UTF-8):	Frontend do programu vamps
 Name:		k9copy
-Version:	%{_real_ver}
-Release:	1
+Version:	1.1.2
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{_ver}.tar.gz
-# Source0-md5:	5b868bf5e0509ecc399c7b18cb2d7a6d
+Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}.tar.gz
+# Source0-md5:	fc9132f9c71fd5506cdc92a50e5fdd0c
 Patch0:		%{name}-desktop.patch
-URL:		http://k9copy.free.fr/
+URL:		http://k9copy.sourceforge.net/
 BuildRequires:	kdelibs-devel >= 9:3.0
 BuildRequires:	libdvdread-devel
 Requires:	dvd+rw-tools
@@ -31,7 +28,7 @@ umożliwiający zmniejszanie obrazów płyt DVD z DVD 9 do DVD 5 w
 środowisku KDE pod Linuksem.
 
 %prep
-%setup -q -n %{name}-%{_ver}
+%setup -q -n %{name}-%{version}
 %patch0 -p0
 
 %build
