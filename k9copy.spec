@@ -1,4 +1,3 @@
-
 Summary:	A vamps frontend
 Summary(pl.UTF-8):	Frontend do programu vamps
 Name:		k9copy
@@ -28,7 +27,7 @@ umożliwiający zmniejszanie obrazów płyt DVD z DVD 9 do DVD 5 w
 środowisku KDE pod Linuksem.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 %patch0 -p0
 
 %build
