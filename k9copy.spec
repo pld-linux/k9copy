@@ -1,12 +1,12 @@
 Summary:	A vamps frontend
 Summary(pl.UTF-8):	Frontend do programu vamps
 Name:		k9copy
-Version:	1.1.3
+Version:	1.2.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}.tar.gz
-# Source0-md5:	39d7c8c62336cabb4845463a390a50f9
+# Source0-md5:	b98f95a2ecb30a701f88e63294e6dee6
 Patch0:		%{name}-desktop.patch
 URL:		http://k9copy.sourceforge.net/
 BuildRequires:	kdelibs-devel >= 9:3.0
@@ -28,7 +28,7 @@ umożliwiający zmniejszanie obrazów płyt DVD z DVD 9 do DVD 5 w
 
 %prep
 %setup -q
-%patch0 -p0
+%patch0 -p1
 
 %build
 %configure \
