@@ -1,14 +1,17 @@
 Summary:	A vamps frontend
 Summary(pl.UTF-8):	Frontend do programu vamps
 Name:		k9copy
-Version:	1.2.2
+Version:	1.2.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}.tar.gz
-# Source0-md5:	7c91b5c58f15330ec668dfccb93e84fb
+# Source0-md5:	00729b3eba15279142963420cd66d99b
 Patch0:		%{name}-desktop.patch
 URL:		http://k9copy.sourceforge.net/
+BuildRequires:	Mesa-libGLU-devel
+BuildRequires:	ffmpeg-devel
+BuildRequires:	hal-devel
 BuildRequires:	kdelibs-devel >= 9:3.0
 BuildRequires:	libdvdread-devel
 Requires:	dvd+rw-tools
@@ -48,7 +51,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir},%{_desktopdir}/kde}
 	prefix=%{_prefix} \
 	kde_htmldir=%{_kdedocdir} \
 	manprefix=%{_mandir}
-mv $RPM_BUILD_ROOT%{_datadir}/applnk/Multimedia/k9copy.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde
 
 %find_lang %{name} --all-name --with-kde
 
