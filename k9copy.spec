@@ -9,7 +9,7 @@ Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}.tar.gz
 # Source0-md5:	00729b3eba15279142963420cd66d99b
 Patch0:		%{name}-desktop.patch
 URL:		http://k9copy.sourceforge.net/
-BuildRequires:	Mesa-libGLU-devel
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	hal-devel
 BuildRequires:	kdelibs-devel >= 9:3.0
