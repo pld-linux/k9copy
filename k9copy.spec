@@ -1,18 +1,17 @@
 Summary:	A vamps frontend
 Summary(pl.UTF-8):	Frontend do programu vamps
 Name:		k9copy
-Version:	1.2.3
+Version:	2.1.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}.tar.gz
-# Source0-md5:	00729b3eba15279142963420cd66d99b
+Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}-Source.tar.gz
+# Source0-md5:	a331cec7214ca1005117cd7fa457873a
 Patch0:		%{name}-desktop.patch
 URL:		http://k9copy.sourceforge.net/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	hal-devel
-BuildRequires:	kdelibs-devel >= 9:3.0
 BuildRequires:	libdvdread-devel
 Requires:	dvd+rw-tools
 Requires:	dvdauthor
@@ -30,23 +29,21 @@ umożliwiający zmniejszanie obrazów płyt DVD z DVD 9 do DVD 5 w
 środowisku KDE pod Linuksem.
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -n %{name}-%{version}-Source
 
 %build
-%configure \
-%if "%{_lib}" == "lib64"
-	--enable-libsuffix=64 \
-%endif
-	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
-	--with-qt-libraries=%{_libdir}
+install -d build
+cd build
+%cmake \
+        -DCMAKE_INSTALL_PREFIX=%{_prefix} \
+        -LCMS_DIR=%{_libdir} \
+        ../
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir},%{_desktopdir}/kde}
 
-%{__make} install \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	prefix=%{_prefix} \
 	kde_htmldir=%{_kdedocdir} \
@@ -64,6 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/k9copy
-%{_datadir}/apps/konqueror/servicemenus/k9copy_open.desktop
-%{_desktopdir}/kde/k9copy.desktop
+%{_desktopdir}/kde4/k9copy.desktop
+%{_desktopdir}/kde4/k9copy_assistant.desktop
+%{_datadir}/apps/solid/actions/k9copy_assistant_open.desktop
+%{_datadir}/apps/solid/actions/k9copy_open.desktop
 %{_iconsdir}/*/*x*/*/k9copy.png
