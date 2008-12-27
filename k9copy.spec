@@ -12,6 +12,7 @@ URL:		http://k9copy.sourceforge.net/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	hal-devel
+BuildRequires:	kde4-kdelibs-devel >= 4.1.0
 BuildRequires:	libdvdread-devel
 Requires:	dvd+rw-tools
 Requires:	dvdauthor
@@ -37,6 +38,9 @@ cd build
 %cmake \
         -DCMAKE_INSTALL_PREFIX=%{_prefix} \
         -LCMS_DIR=%{_libdir} \
+%if "%{_lib}" == "lib64"
+        -DLIB_SUFFIX=64 \
+%endif
         ../
 %{__make}
 
