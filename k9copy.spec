@@ -1,12 +1,12 @@
 Summary:	A vamps frontend
 Summary(pl.UTF-8):	Frontend do programu vamps
 Name:		k9copy
-Version:	2.1.0
+Version:	2.2.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}-Source.tar.gz
-# Source0-md5:	a331cec7214ca1005117cd7fa457873a
+# Source0-md5:	3a31468c8166cb2977ebbb1bc8c1f975
 Patch0:		%{name}-desktop.patch
 URL:		http://k9copy.sourceforge.net/
 BuildRequires:	OpenGL-GLU-devel
@@ -14,6 +14,7 @@ BuildRequires:	ffmpeg-devel
 BuildRequires:	hal-devel
 BuildRequires:	kde4-kdelibs-devel >= 4.1.0
 BuildRequires:	libdvdread-devel
+BuildRequires:	mpeg2dec-devel
 Requires:	dvd+rw-tools
 Requires:	dvdauthor
 Requires:	vamps
