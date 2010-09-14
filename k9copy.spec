@@ -1,12 +1,12 @@
 Summary:	A vamps frontend
 Summary(pl.UTF-8):	Frontend do programu vamps
 Name:		k9copy
-Version:	2.3.5
+Version:	2.3.6
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/k9copy/%{name}-%{version}-Source.tar.gz
-# Source0-md5:	808382988bc87c58d7149da97637e57d
+# Source0-md5:	c062dcb141a0320afe9dae0d36f87965
 Patch0:		%{name}-desktop.patch
 URL:		http://k9copy.sourceforge.net/
 BuildRequires:	OpenGL-GLU-devel
