@@ -16,6 +16,7 @@ BuildRequires:	kde4-kdelibs-devel >= 4.1.0
 BuildRequires:	libdvdread-devel
 BuildRequires:	mpeg2dec-devel
 BuildRequires:	qt4-build
+BuildRequires:	xine-lib-devel
 Requires:	dvd+rw-tools
 Requires:	dvdauthor
 Requires:	vamps
