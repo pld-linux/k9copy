@@ -10,6 +10,7 @@ Source0:	http://downloads.sourceforge.net/k9copy/%{name}-%{version}-Source.tar.g
 Patch0:		%{name}-desktop.patch
 URL:		http://k9copy.sourceforge.net/
 BuildRequires:	OpenGL-GLU-devel
+BuildRequires:	automoc4
 BuildRequires:	ffmpeg-devel
 BuildRequires:	kde4-kdelibs-devel >= 4.1.0
 BuildRequires:	libdvdread-devel
