@@ -1,0 +1,11 @@
+--- k9copy-3.0.3/src/core/k9tools.cpp~	2014-09-29 17:00:12.000000000 +0200
++++ k9copy-3.0.3/src/core/k9tools.cpp	2017-12-17 10:47:17.563718776 +0100
+@@ -88,7 +88,7 @@
+     #if QT_VERSION >= 0x050000
+     bool res=QStandardPaths::findExecutable( _progName) !=NULL ;
+     #else // Qt4 Code
+-    bool res= KStandardDirs::findExe( _progName,NULL,false) !=NULL ;
++    bool res= KStandardDirs::findExe( _progName,NULL) !=NULL ;
+     #endif
+     if (_msg && !res)
+         k9Dialogs::error(i18n("Error starting program %1").arg(_progName),i18n("Running program"));

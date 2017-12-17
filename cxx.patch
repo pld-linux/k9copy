@@ -1,0 +1,11 @@
+--- k9copy-3.0.3/src/backup/k9dvdbackup.cpp~	2014-09-29 18:55:40.000000000 +0200
++++ k9copy-3.0.3/src/backup/k9dvdbackup.cpp	2017-12-17 09:51:56.091040526 +0100
+@@ -907,7 +907,7 @@
+ 
+ 
+         if ((vobu1 !=NULL) && (vobu2!=NULL)) {
+-            *_offset = abs(vobu1->newSector - vobu2->newSector)  | maskOffset1 ;
++            *_offset = abs((long int)vobu1->newSector - (long int)vobu2->newSector)  | maskOffset1 ;
+             *_offset |= maskOffset2;
+             return vobu2;
+         }

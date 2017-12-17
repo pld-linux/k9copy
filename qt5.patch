@@ -1,0 +1,11 @@
+--- k9copy-3.0.3/src/backup/k9execcopy.cpp~	2014-09-29 17:00:12.000000000 +0200
++++ k9copy-3.0.3/src/backup/k9execcopy.cpp	2017-12-17 09:53:52.939272304 +0100
+@@ -306,7 +306,7 @@
+ 
+ #if QT_VERSION >= 0x050000
+     m_progressDialog=new QProgressDialog(k9Dialogs::getMainWidget() );
+-    m_progressDialog->setCancelButton(false);
++//    m_progressDialog->setCancelButton(false);
+ 
+ #else
+     m_progressDialog=new KProgressDialog(k9Dialogs::getMainWidget() );
